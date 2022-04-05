@@ -7,7 +7,6 @@
 
 let num = prompt("Введите число товаров");
 
-
 if (num.endsWith(1)) {
     console.log(`В доступе сейчас ${num} товар`);
     } if (num.endsWith(2) || num.endsWith(3) || num.endsWith(4)) {
