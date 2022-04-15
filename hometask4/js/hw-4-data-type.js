@@ -13,20 +13,36 @@ console.log(new_mass);
 // TASK 2
 
 let scope = [];
+let minV = 300;
+let minInd;
+let maxV = 5;
+let maxInd;
+let elem;
 let i = 0;
-let j = 0;
-for ( let i = 0; i < 7; i++ ) {
-    scope.push( Math.round( Math.random() * 300 ));
-}
-console.log(scope);
-let max = Math.max (...scope);
-let min = Math.min (...scope);
-
-for (i = 0, j = 0; i < scope.length && j < scope.length; i++, j++) {
-    if (scope[i] === min && scope[j] === max) {
-        scope[i] = max;
-        scope[j] = min;
+for ( i = 0; i < 7; i++ ) {
+    elem = Math.round( Math.random() * 300 - 6 + 6 );
+    scope.push(elem);
+    if (elem < minV) {
+        minV = elem;
+        minInd = i;
+    } 
+    if (elem > maxV) {
+        maxV = elem;
+        maxInd = i;
     }
+} console.log(scope);
+
+
+// TASK 3
+
+let newArr = [];
+let string;
+while (true) {
+    string = prompt("Введите строку")
+    newArr.push(string);
+        if (string == 0 || string == null) {
+            break;
+        }
+    console.log(newArr);
 }
-console.log(scope);
 
