@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Курсовая работа. Часть 1</title>
+        <link rel="stylesheet" href="css/exam.css">
+    </head>
+    <body>
+        <header>
+
+        </header>
+        <main>
+            <h2>Добавление задачи</h2>
+            <section class="section">
+                <div>
+                    <label class="label">Название задачи</label>
+                    <input type="text" placeholder="Введите название задачи" min="0" max="20" class="input">
+                </div>
+                <div>
+                    <label class="label">Описание задачи</label>
+                    <textarea placeholder="Введите описание задачи"></textarea>
+                </div>
+                <div>
+                    <label class="label">Срок выполнения задачи</label>
+                    <input type="datetime-local" class="input">
+                </div>
+            </section>
+            <aside class="section">
+                    <input class="add-button" type="submit" value="Добавить участника">
+                    <div class="add-participator">
+                        <input type="text" placeholder="Введите имя участника" class="input-participator">
+                        <button>&#10006;</button>
+                    </div>
+            </aside>
+            <div class="section">
+                <input class="add-task"  type="submit" value="Добавить задачу">
+            </div>
+        </main>
+        <footer>
+            <script src="js/exam1.js"></script>
+        </footer>
+    </body>
+</html>

@@ -80,9 +80,9 @@ buttons_block.forEach(button => {
   
    function makeCounter(start_value) {
     let count = start_value;
-        return function (action) {
+        return function (action, goods) {
             if (action === "+"){
-                return ++count;
+                return ++count >= goods.count ? goods.count : count;
             } else {
                 return --count > 0 ? count : 0;
             }
