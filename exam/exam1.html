@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Курсовая работа. Часть 1</title>
-        <link rel="stylesheet" href="css/exam.css">
+        <link rel="stylesheet" href="css/exam1.css">
     </head>
     <body>
         <header>
@@ -11,18 +11,18 @@
         </header>
         <main>
             <h2>Добавление задачи</h2>
-            <section class="section">
+            <section class="section" class="addtask">
                 <div>
                     <label class="label">Название задачи</label>
-                    <input type="text" placeholder="Введите название задачи" min="0" max="20" class="input">
+                    <input type="text" placeholder="Введите название задачи" minlength="0" maxlength="20" id = "title" class="input">
                 </div>
                 <div>
                     <label class="label">Описание задачи</label>
-                    <textarea placeholder="Введите описание задачи"></textarea>
+                    <textarea id="description" placeholder="Введите описание задачи"></textarea>
                 </div>
                 <div>
                     <label class="label">Срок выполнения задачи</label>
-                    <input type="datetime-local" class="input">
+                    <input id="date" type="datetime-local" class="input">
                 </div>
             </section>
             <aside class="section">
