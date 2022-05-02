@@ -26,8 +26,9 @@ function input_handler(objectOfEvent) {
     new_task_object[objectOfEvent.target.id] = objectOfEvent.target.value;
     console.log(new_task_object);
 
+
     // Проверяем значение наименования задачи
-    if (Object.values(new_task_object.title).length < 5) {
+    if (new_task_object.title.length < 5) {
         let attention1 = document.getElementById("attention1");
         attention1.style.display = "block";
     } else {
@@ -50,24 +51,49 @@ let add_button = document.getElementById("add-button");
 add_button.addEventListener("click", add_handler);
 
 function add_handler() {
+    // считаем участников, чтобы затем задавать каждому новому свой уникальный индекс
+    let count_participiators = document.getElementsByClassName('input-participator').length
+    let participiator_index = 'participiant_' + (count_participiators + 1)
+
+    // создаем непосредственно div с элементами и присваиваем каждому свой уникальный номер
     let add_participiant = document.createElement("div");
     add_participiant.classList.add("add-participator");
-    add_participiant.innerHTML = 
-    `<input type="text" placeholder="Введите имя участника" class="input-participator" id="participiant">
-    <button>&#10006;</button>`;
-    document.getElementById("add-button").append(add_participiant);
+    add_participiant.setAttribute("id", "add-participator_" + (count_participiators + 1))
+
+    // создаем непосредственно input, наделяем его атрибутами. Просто код не получилось вставить, т.к. тогда не будет уникального индекса
+    let input = document.createElement("input");
+    input.classList.add("input-participator");
+    input.setAttribute("id", participiator_index);
+    input.setAttribute("type", "text");
+    input.setAttribute("placeholder", "Введите имя участника");
+    input.addEventListener("input", input_handler);
+    add_participiant.prepend(input);
+
+    // Создаем кнопку удаления участников
+    let delete_button = document.createElement("button");
+    delete_button.innerHTML = "&#10006;"
+    add_participiant.append(delete_button);
+    delete_button.addEventListener("click", ()=>{
+        remove_handler(`add-participator_${count_participiators + 1}`)
+    });
+    document.getElementById("participator_aside").append(add_participiant);
 }
 
-//удаление нового участника
+//удаление участника
 let remove_button = document.getElementById("remove-button");
-remove_button.addEventListener("click", remove_handler);
+remove_button.addEventListener("click", ()=>{
+    remove_handler("add-participator")
+});
 
-function remove_handler() {
-    this.removeEventListener("click", add_handler);
-};
+    function remove_handler(remove_id_block) {
+        document.getElementById(remove_id_block).remove()
+        // add_participiant.setAttribute("id", "add-participator_" + (count_participiators + 1))
+    };
 
 
 
+    // add_participiant.innerHTML = 
+    // `<input type="text" placeholder="Введите имя участника" class="input-participator" id="${participiator_index}">`;
 
 
 // let divElem = document.createElement("div");
