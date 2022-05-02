@@ -30,6 +30,7 @@ h2 {
 }
 div {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     align-items:baseline;
 
@@ -44,7 +45,16 @@ div {
     border: 2px solid #838383;
     border-radius: 5px;    
 }
-
+.attention1 {
+    display: none;
+    color: rgb(255, 60, 0);
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-left: auto;
+    margin-right: 5%;
+    font-weight: bold;
+    font-size: small;
+}
 textarea {
     display: block;
     width: 500px;
@@ -58,7 +68,16 @@ textarea {
     padding-bottom: 5px;
 
 }
-
+.attention2 {
+    display: none;
+    color: rgb(255, 60, 0);
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-left: auto;
+    margin-right: 5%;
+    font-weight: bold;
+    font-size: small;
+}
 .label {
     margin-left: 5%;
 }
