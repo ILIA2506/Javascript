@@ -15,6 +15,7 @@ if (!new_task_object_full) {
         let div = document.createElement("div");
         div.classList.add("createdDiv")
         document.querySelector("section").append(div);
+        div.style.backgroundColor = "rgb(220, 235, 253)";
 
         let h3 = document.createElement("h3")
         h3.innerText = task.title;
@@ -44,23 +45,22 @@ for (let i of colored_div) {
 i.addEventListener("click", setColor);
 
 function setColor() {
-    let colorArea = document.getElementsByClassName("createdDiv");
 
-    if (colorArea.style.backgroundColor = "blue") {
-        let colored_div = document.getElementsByClassName("createdDiv");
-        colored_div.addEventListener("click", deleteColor);
+    if (i.style.backgroundColor = "blue") {
+        // let i = document.getElementsByClassName("createdDiv");
+        i.addEventListener("click", deleteColor);
         
             function deleteColor() {
-            colorArea = document.getElementsByClassName("createdDiv");
-            colorArea.style.backgroundColor = "rgb(220, 235, 253)";
+            // colorArea = document.getElementsByClassName("createdDiv");
+            i.style.backgroundColor = "rgb(220, 235, 253)";
             }
-    } else {
-        let uncolored_div = document.getElementsByClassName("createdDiv");
-        uncolored_div.addEventListener("click", addColor);
+    } else if (i.style.backgroundColor = "rgb(220, 235, 253)") {
+        // let uncolored_div = document.getElementsByClassName("createdDiv");
+        i.addEventListener("click", addColor);
         
             function addColor() {
-            let colorArea = document.getElementsByClassName("createdDiv");
-            colorArea.style.backgroundColor = "blue";
+            // colorArea = document.getElementsByClassName("createdDiv");
+            i.style.backgroundColor = "blue";
             }
         }
 }
