@@ -13,6 +13,7 @@ if (!new_task_object_full) {
     for (let task of new_task_object_full) {
 
         let div = document.createElement("div");
+        div.classList.add("createdDiv")
         document.querySelector("section").append(div);
 
         let h3 = document.createElement("h3")
@@ -24,8 +25,43 @@ if (!new_task_object_full) {
         p.innerText = task.description;
         div.append(p);
 
-        let span = document.createElement("span");
-        span.innerText = `Выполнить к: ${task.date}`;
-        div.append(span);
-    }
+        let span1 = document.createElement("span");
+        span1.innerText = `Выполнить к: ${task.date}`;
+        div.append(span1);
+
+        let span2 = document.createElement("span");
+        span2.innerText = `Участник: ${task.participiants}`;
+        div.append(span2);
+    }    
+}
+
+// Пытаемся сделать div выделяющимся и даже немного получается, но только по id либо когда указывают конкретный элемент массива...
+// А чтобы все работало - что-то как-то не получается... 
+let colored_div = document.getElementsByClassName("createdDiv");
+
+for (let i of colored_div) {
+
+colored_div.addEventListener("click", setColor);
+
+function setColor() {
+    let colorArea = document.getElementsByClassName("createdDiv");
+
+    if (colorArea.style.backgroundColor = "blue") {
+        let colored_div = document.getElementsByClassName("createdDiv");
+        colored_div.addEventListener("click", deleteColor);
+        
+            function deleteColor() {
+            colorArea = document.getElementsByClassName("createdDiv");
+            colorArea.style.backgroundColor = "rgb(220, 235, 253)";
+            }
+    } else {
+        let uncolored_div = document.getElementsByClassName("createdDiv");
+        uncolored_div.addEventListener("click", addColor);
+        
+            function addColor() {
+            let colorArea = document.getElementsByClassName("createdDiv");
+            colorArea.style.backgroundColor = "blue";
+            }
+        }
+}
 }
