@@ -41,7 +41,7 @@ let colored_div = document.getElementsByClassName("createdDiv");
 
 for (let i of colored_div) {
 
-colored_div.addEventListener("click", setColor);
+i.addEventListener("click", setColor);
 
 function setColor() {
     let colorArea = document.getElementsByClassName("createdDiv");
